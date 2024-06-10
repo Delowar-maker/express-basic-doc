@@ -1,13 +1,9 @@
 var express = require('express');
 var app = express();
 app.get('/', function (req, res) {
-    res.send('Hello World!');
-});
-app.get('/bd', function (req, res) {
-    res.redirect('http://localhost:3000/ind');
-});
-app.get('/ind', function (req, res) {
-    res.send('Hello India!');
+    let firstName = req.query.firstName;
+    let lastName = req.query.lastName;
+    res.end(firstName + ' ' + lastName);
 });
 
 
