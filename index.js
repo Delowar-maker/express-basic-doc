@@ -1,8 +1,8 @@
 var express = require('express');
 var app = express();
 app.get('/', function (req, res) {
-    let firstName = req.query.firstName;
-    let lastName = req.query.lastName;
+    let firstName = req.header('firstName');
+    let lastName = req.header('lastName');
     res.end(firstName + ' ' + lastName);
 });
 
